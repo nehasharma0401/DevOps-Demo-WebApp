@@ -9,7 +9,7 @@ pipeline {
 
     stage('Static Code Analysis') {
       steps {
-        echo 'Code Analysis using Sonar Qube'
+        echo 'Code Analysis'
         
       }
     }
@@ -17,7 +17,6 @@ pipeline {
     stage('Compile Webapp') {
       steps {
         echo 'Compiling Webapp'
-        sh 'mvn compile'
       }
     }
 
