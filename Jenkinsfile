@@ -55,5 +55,10 @@ pipeline {
         echo 'Performing Sanity Test'
       }
     }
+    stage('Notification') {
+      steps {
+        echo 'Sending alerts'
+      }
+    }
   }
 }
