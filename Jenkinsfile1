@@ -72,9 +72,9 @@ pipeline {
 
         echo 'Deploy to Test'
 
-        //sh 'mvn clean package'
+        sh 'mvn clean package'
 
-        //deploy adapters: [tomcat8(credentialsId: 'credential', path: '', url: 'http://13.88.12.130:8080')], contextPath: '/QAWebapp', war: '**/*.war'
+        deploy adapters: [tomcat8(credentialsId: 'credential', path: '', url: 'http://13.88.12.130:8080')], contextPath: '/QAWebapp', war: '**/*.war'
 
         //slackSend channel: '#devops', message: 'Code deployed to Test Server'
 
