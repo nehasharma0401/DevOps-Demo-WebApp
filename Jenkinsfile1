@@ -34,7 +34,7 @@ pipeline {
 
         withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonarqube')
 
-           {sh 'mvn clean compile sonar:sonar -Dsonar.host.url=http://13.64.146.48:9000 -Dsonar.sources=. -Dsonar.tests=. -Dsonar.inclusions=**/test/java/servlet/createpage_junit.java -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dsonar.login=admin -Dsonar.password=admin' 
+           {sh 'mvn clean compile sonar:sonar -Dsonar.host.url= http://13.91.92.126:9000/-Dsonar.sources=. -Dsonar.tests=. -Dsonar.inclusions=**/test/java/servlet/createpage_junit.java -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dsonar.login=admin -Dsonar.password=admin' 
 
             }
 
@@ -72,11 +72,11 @@ pipeline {
 
         echo 'Deploy to Test'
 
-        sh 'mvn clean compile package'
+        sh 'mvn clean package'
 
-        deploy adapters: [tomcat8(credentialsId: 'credential', path: '', url: 'http://13.88.12.130:8080')], contextPath: '/QAWebapp', war: '**/*.war'
+        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://138.91.224.225:8080/')], contextPath: '/QAWebapp', war: '**/*.war'
 
-        //slackSend channel: '#devops', message: 'Code deployed to Test Server'
+    //    slackSend channel: '#devops', message: 'Code deployed to Test Server'
 
       }
 
@@ -92,9 +92,9 @@ pipeline {
 
         echo 'Store Artifact' 
 
-        //rtUpload(serverId: 'artifactory')
+        rtUpload(serverId: 'artifactory')
 
-        //rtPublishBuildInfo (serverId: 'artifactory')
+        rtPublishBuildInfo (serverId: 'artifactory')
 
       }
 
@@ -110,7 +110,7 @@ pipeline {
 
         echo 'UI Test'
 
-        //sh 'mvn test -f functionaltest/pom.xml'
+        sh 'mvn test -f functionaltest/pom.xml'
 
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '\\functionaltest\\target\\surefire-reports', reportFiles: 'index.html', reportName: 'UI-Test', reportTitles: ''])
 
@@ -128,7 +128,7 @@ pipeline {
 
         echo 'Performance test'
 
-       //blazeMeterTest(credentialsId: 'blazemeter', workspaceId: '680689', testId: '8642591.taurus')
+       // blazeMeterTest(credentialsId: 'blazemeter', workspaceId: '680689', testId: '8642591.taurus')
 
       }
 
@@ -146,7 +146,7 @@ pipeline {
 
         sh 'mvn clean install'
 
-        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://13.88.12.130:8080')], contextPath: '/ProdWebapp', war: '**/*.war'
+        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://138.91.224.225:8080/)], contextPath: '/ProdWebapp', war: '**/*.war'
 
         //slackSend channel: '#devops', message: 'Code deployed to prod server'
 
