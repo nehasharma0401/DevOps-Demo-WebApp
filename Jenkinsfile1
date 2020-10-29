@@ -38,7 +38,7 @@ pipeline {
 
             }
 
-     //   slackSend channel: '#devops', message: 'Stattic test analysis completed'
+     //slackSend channel: '#devops', message: 'Stattic test analysis completed'
 
       }
 
