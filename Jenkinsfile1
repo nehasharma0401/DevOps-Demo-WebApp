@@ -12,8 +12,6 @@ pipeline {
 
         maven 'maven' 
 
-        jdk 'jdk'
-
     }
 
   
