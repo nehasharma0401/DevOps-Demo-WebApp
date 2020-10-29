@@ -74,7 +74,7 @@ pipeline {
 
         sh 'mvn clean package'
 
-        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://138.91.224.225:8080/')], contextPath: '/QAWebapp', war: '**/*.war'
+        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://138.91.224.225:8080')], contextPath: '/QAWebapp', war: '**/*.war'
 
     //    slackSend channel: '#devops', message: 'Code deployed to Test Server'
 
@@ -146,7 +146,7 @@ pipeline {
 
         sh 'mvn clean install'
 
-        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://138.91.224.225:8080/)], contextPath: '/ProdWebapp', war: '**/*.war'
+        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://138.91.224.225:8080')], contextPath: '/ProdWebapp', war: '**/*.war'
 
         //slackSend channel: '#devops', message: 'Code deployed to prod server'
 
