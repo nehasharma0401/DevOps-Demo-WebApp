@@ -34,7 +34,7 @@ pipeline {
 
         withSonarQubeEnv(credentialsId: 'sonar', installationName: 'sonarqube')
 
-           {sh 'mvn clean compile sonar:sonar -Dsonar.host.url= http://13.91.92.126:9000 -Dsonar.sources=. -Dsonar.tests=. -Dsonar.inclusions=**/test/java/servlet/createpage_junit.java -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dsonar.login=admin -Dsonar.password=admin' 
+           {sh 'mvn clean compile sonar:sonar -Dsonar.host.url=http://13.91.92.126:9000 -Dsonar.sources=. -Dsonar.tests=. -Dsonar.inclusions=**/test/java/servlet/createpage_junit.java -Dsonar.test.exclusions=**/test/java/servlet/createpage_junit.java -Dsonar.login=admin -Dsonar.password=admin' 
 
             }
 
