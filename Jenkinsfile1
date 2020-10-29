@@ -92,9 +92,9 @@ pipeline {
 
         echo 'Store Artifact' 
 
-        rtUpload(serverId: 'artifactory')
+        //rtUpload(serverId: 'artifactory')
 
-        rtPublishBuildInfo (serverId: 'artifactory')
+        //rtPublishBuildInfo (serverId: 'artifactory')
 
       }
 
@@ -128,7 +128,7 @@ pipeline {
 
         echo 'Performance test'
 
-       // blazeMeterTest(credentialsId: 'blazemeter', workspaceId: '680689', testId: '8642591.taurus')
+       //blazeMeterTest(credentialsId: 'blazemeter', workspaceId: '680689', testId: '8642591.taurus')
 
       }
 
