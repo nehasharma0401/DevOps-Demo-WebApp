@@ -146,7 +146,7 @@ pipeline {
 
         sh 'mvn clean install'
 
-        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://13.91.52.122:8080/)], contextPath: '/ProdWebapp', war: '**/*.war'
+        deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://40.85.165.152:8080/)], contextPath: '/ProdWebapp', war: '**/*.war'
 
         //slackSend channel: '#devops', message: 'Code deployed to prod server'
 
