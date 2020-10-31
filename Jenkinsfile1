@@ -180,9 +180,9 @@ pipeline {
 
         echo 'Store Artifact' 
 
-        rtUpload(serverId: 'artifactory')
+        //rtUpload(serverId: 'artifactory')
 
-        rtPublishBuildInfo (serverId: 'artifactory')
+        //rtPublishBuildInfo (serverId: 'artifactory')
 
         //slackSend channel: "${sChannel}", message: 'Artifacts deployed to Artifactory'
 
