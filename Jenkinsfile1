@@ -104,7 +104,7 @@ pipeline {
 
       steps {
 
-        //slackSend channel: "${sChannel}", message: 'Starting Jenkins Build for Devops Web App . Build Number:' + "${buildnum}"
+        slackSend channel: "${sChannel}", message: 'Starting Jenkins Build for Devops Web App . Build Number:' + "${buildnum}"
 
       }
 
@@ -126,7 +126,7 @@ pipeline {
 
             }
 
-        //slackSend channel: '#devops', message: 'Stattic test analysis completed'
+        slackSend channel: '#devops', message: 'Stattic test analysis completed'
 
       }
 
