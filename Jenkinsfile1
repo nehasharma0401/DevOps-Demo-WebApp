@@ -104,7 +104,7 @@ pipeline {
 
       steps {
 
-        slackSend channel: "${sChannel}", message: 'Starting Jenkins Build for Devops Web App . Build Number:' + "${buildnum}"
+        //slackSend channel: "${sChannel}", message: 'Starting Jenkins Build for Devops Web App . Build Number:' + "${buildnum}"
 
       }
 
@@ -126,7 +126,7 @@ pipeline {
 
             }
 
-        slackSend channel: '#devops', message: 'Stattic test analysis completed'
+        //slackSend channel: '#devops', message: 'Stattic test analysis completed'
 
       }
 
@@ -164,7 +164,7 @@ pipeline {
 
         deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: "${tomcatTest}")], contextPath: "${testPath}", war: '**/*.war'
 
-        slackSend channel: "${sChannel}", message: 'Code deployed to Test Server'
+        //slackSend channel: "${sChannel}", message: 'Code deployed to Test Server'
 
       }
 
@@ -184,7 +184,7 @@ pipeline {
 
         rtPublishBuildInfo (serverId: 'artifactory')
 
-        slackSend channel: "${sChannel}", message: 'Artifacts deployed to Artifactory'
+        //slackSend channel: "${sChannel}", message: 'Artifacts deployed to Artifactory'
 
       }
 
@@ -204,7 +204,7 @@ pipeline {
 
            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: "${uiPath}", reportFiles: 'index.html', reportName: 'UI-Test', reportTitles: ''])
 
-           slackSend channel: "${sChannel}", message: 'UI Test Completed Successfully'
+           //slackSend channel: "${sChannel}", message: 'UI Test Completed Successfully'
 
            }
 
@@ -222,7 +222,7 @@ pipeline {
 
             //blazeMeterTest(credentialsId: 'blazemeter', workspaceId: '680689', testId: '8642591.taurus')
 
-            slackSend channel: "${sChannel}", message: 'Performance Test completed'
+            //slackSend channel: "${sChannel}", message: 'Performance Test completed'
 
            }
 
