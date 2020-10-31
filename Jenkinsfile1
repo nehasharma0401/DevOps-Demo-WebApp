@@ -84,7 +84,7 @@ pipeline {
 
         maven 'maven' 
 
-        jdk  'jdk'
+        jdk  'java'
 
     }
 
