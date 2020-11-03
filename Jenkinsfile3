@@ -56,7 +56,7 @@ pipeline {
 
     //tomcat PROD URL and Path 
 
-    tomcatProd = "http://52.186.156.57:8080/
+    tomcatProd = "http://52.186.156.57:8080"
 
     prodPath = "/ProdWebapp"
 
