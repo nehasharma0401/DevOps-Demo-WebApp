@@ -26,7 +26,7 @@ pipeline {
 
     //tomcat TEST Url and Path 
 
-    tomcatTest = "http://13.90.26.78:8080"
+    tomcatTest = "http://52.255.191.97:8080"
 
     testPath = "/QAWebapp"
 
@@ -34,7 +34,7 @@ pipeline {
 
     //tomcat PROD URL and Path 
 
-    tomcatProd = "http://40.85.165.152:8080"
+    tomcatProd = "http://52.186.156.57:8080"
 
     prodPath = "/ProdWebapp"
 
@@ -44,7 +44,7 @@ pipeline {
 
     // Sonarqube URL 
 
-    sonarPath = 'http://40.86.188.219:9000'
+    sonarPath = 'http://104.40.61.127:9000'
 
     
 
