@@ -114,7 +114,7 @@ pipeline {
 
         jdk  'JDK'
 
-        groovy 'gradle' 
+        //groovy 'gradle' 
 
     }
 
