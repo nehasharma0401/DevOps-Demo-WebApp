@@ -48,7 +48,7 @@ pipeline {
 
     //tomcat TEST Url and Path 
 
-    tomcatTest = "http://52.188.149.71:8080"
+    tomcatTest = "http://52.255.191.97:8080"
 
     testPath = "/QAWebapp"
 
@@ -56,7 +56,7 @@ pipeline {
 
     //tomcat PROD URL and Path 
 
-    tomcatProd = "http://52.188.209.130:8080"
+    tomcatProd = "http://52.186.156.57:8080/
 
     prodPath = "/ProdWebapp"
 
@@ -66,7 +66,7 @@ pipeline {
 
     // Sonarqube URL 
 
-    sonarPath = 'http://13.72.87.23:9000'
+    sonarPath = 'http://104.40.61.127:9000'
 
     
 
@@ -112,7 +112,7 @@ pipeline {
 
         maven 'maven' 
 
-        jdk  'jdk'
+        jdk  'java'
 
         groovy 'groovy' 
 
