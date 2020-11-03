@@ -112,9 +112,9 @@ pipeline {
 
         maven 'Maven' 
 
-        jdk  'java'
+        jdk  'Java'
 
-        groovy 'groovy' 
+        groovy 'Groovy' 
 
     }
 
